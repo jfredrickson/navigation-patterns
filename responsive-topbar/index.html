@@ -8,12 +8,10 @@
 
     <title>Responsive Top Bar</title>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
+    <link rel="stylesheet" href="../common/normalize.css">
+    <link rel="stylesheet" href="../common/common.css">
 
+    <style>
       nav {
         background-color: #f2f2f2;
         position: relative;
@@ -27,10 +25,6 @@
         display: table;
       }
 
-      nav li, nav a {
-        line-height: 50px; /* Nav bar height */
-      }
-
       nav a {
         text-decoration: none;
       }
@@ -39,10 +33,14 @@
       .nav-title {
         float: left;
       }
-      .nav-title a {
-        display: block;
-        padding: 0.5em 1em;
-        background-color: #e0e0e0;
+      .nav-title img {
+        float: left;
+        padding: 10px;
+      }
+      .nav-title .text-link {
+        line-height: 50px;
+        display: inline-block;
+        padding: 0 1em;
       }
 
       /* Toggle button / hamburger menu */
@@ -50,15 +48,16 @@
         float: right;
       }
       .nav-toggle a {
+        line-height: 50px;
         display: block;
-        padding: 0.5em 1em;
-        background-color: #e0e0e0;
+        padding: 0 1em;
       }
 
       ul.nav-topnav {
         display: none;
+        margin: 0;
+        padding: 0;
         width: 100%;
-        list-style: none;
       }
 
       ul.nav-topnav.nav-revealed {
@@ -67,12 +66,12 @@
 
       ul.nav-topnav li {
         display: block;
-        background-color: #e0e0e0;
       }
 
       ul.nav-topnav li a {
+        line-height: 50px;
         display: block;
-        padding: 0.5em 1em;
+        padding: 0 1em;
       }
 
       /* Change 640px to whatever the nav breakpoint should be */
@@ -103,7 +102,8 @@
 
     <nav>
       <div class="nav-title">
-        <a href="#">Site Title</a>
+        <a class="logo-link" href="#"><img class="logo" src="../common/happy.png" alt="Logo"></a>
+        <a class="text-link" href="#">Site Title</a>
       </div>
       <div class="nav-toggle">
         <a href="javascript:void(0);" onclick="toggleNavMenu();">&#9776;</a>
