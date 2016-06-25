@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Responsive Top Bar Fixed</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Because the navbar is fixed, BODY should generally have a margin to clear the nav bar. */
+      body {
+        margin-top: 80px;
+      }
+
+      nav {
+        background-color: #f2f2f2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        width: 100%;
+        height: auto;
+      }
+      /* Auto clear floats in order to allow the nav bar to adjust height based on its child content */
+      nav:after {
+        content: " ";
+        clear: both;
+        display: table;
+      }
+
+      nav li, nav a {
+        line-height: 50px; /* Nav bar height */
+      }
+
+      nav a {
+        text-decoration: none;
+      }
+
+      /* Site title at top left */
+      .nav-title {
+        float: left;
+      }
+      .nav-title a {
+        display: block;
+        padding: 0.5em 1em;
+        background-color: #e0e0e0;
+      }
+
+      /* Toggle button / hamburger menu */
+      .nav-toggle {
+        float: right;
+      }
+      .nav-toggle a {
+        display: block;
+        padding: 0.5em 1em;
+        background-color: #e0e0e0;
+      }
+
+      ul.nav-topnav {
+        display: none;
+        width: 100%;
+        list-style: none;
+      }
+
+      ul.nav-topnav.nav-revealed {
+        display: inline-block;
+      }
+
+      ul.nav-topnav li {
+        display: block;
+        background-color: #e0e0e0;
+      }
+
+      ul.nav-topnav li a {
+        display: block;
+        padding: 0.5em 1em;
+      }
+
+      /* Change 640px to whatever the nav breakpoint should be */
+      @media only screen and (min-width: 640px) {
+        .nav-title {
+          display: inline-block;
+        }
+
+        .nav-toggle {
+          display: none;
+        }
+
+        ul.nav-topnav {
+          display: inline-block;
+          width: auto;
+          float: right;
+        }
+
+        ul.nav-topnav li {
+          display: inline-block;
+        }
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-title">
+        <a href="#">Site Title</a>
+      </div>
+      <div class="nav-toggle">
+        <a href="javascript:void(0);" onclick="toggleNavMenu();">&#9776;</a>
+      </div>
+      <ul class="nav-topnav">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+      </ul>
+    </nav>
+    <script>
+      function toggleNavMenu() {
+        document.getElementsByClassName("nav-topnav")[0].classList.toggle("nav-revealed");
+      }
+    </script>
+
+    <h1>Responsive Top Bar Fixed Demo</h1>
+
+    <p>Same as the <a href="../responsive-topbar/index.html">responsive top bar</a>, but fixed to the top of the page.</p>
+
+  </body>
+</html>
